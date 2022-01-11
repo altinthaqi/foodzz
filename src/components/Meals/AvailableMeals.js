@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AvailableMeals.module.css";
+import { MealsContainer } from "./AvailableMealsStyled";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 
@@ -42,11 +42,11 @@ function AvailableMeals() {
   ));
 
   return (
-    <section className={styles.meals}>
+    <MealsContainer>
       <Card>
         <ul>{mealsList}</ul>
       </Card>
-    </section>
+    </MealsContainer>
   );
 }
 

@@ -8,7 +8,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <Container>
-        <h3>FoodOrdering</h3>
+        <h3>foodZz</h3>
         {props.theme === "light" ? (
           <BsFillMoonFill
             className="themeIcon"

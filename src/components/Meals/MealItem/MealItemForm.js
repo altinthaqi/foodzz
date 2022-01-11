@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import styles from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
+import { Form } from "./MealItemFormStyled";
 
 function MealItemForm(props) {
   const [amountIsValid, setAmountIsValid] = useState(true);
@@ -24,7 +24,7 @@ function MealItemForm(props) {
   };
 
   return (
-    <form className={styles.form} onSubmit={submitHandler}>
+    <Form onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -39,7 +39,7 @@ function MealItemForm(props) {
       />
       <button>+ Add</button>
       {!amountIsValid && <p>Please enter a valid amount (1-5)</p>}
-    </form>
+    </Form>
   );
 }
 

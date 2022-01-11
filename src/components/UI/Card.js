@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Card.module.css";
+import { CardContainer } from "./CardStyled";
 
 function Card(props) {
-  return <div className={styles.card}>{props.children}</div>;
+  return <CardContainer>{props.children}</CardContainer>;
 }
 
 export default Card;
