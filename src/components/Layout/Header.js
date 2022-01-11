@@ -1,19 +1,27 @@
 import { Fragment } from "react";
-import mealsImage from "../../assets/img/meals.jpg";
-import styles from "./Header.module.css";
 import HeaderCartButton from "../Layout/HeaderCartButton";
+import { Container } from "./HeaderStyled";
+import { MdLightMode } from "react-icons/md";
+import { BsFillMoonFill } from "react-icons/bs";
 
 const Header = (props) => {
   return (
     <Fragment>
-      <header className={styles.header}>
-        <h1>ReactMeals</h1>
+      <Container>
+        <h3>FoodOrdering</h3>
+        {props.theme === "light" ? (
+          <BsFillMoonFill
+            className="themeIcon"
+            onClick={() => props.themeToggler()}
+          />
+        ) : (
+          <MdLightMode
+            className="themeIcon"
+            onClick={() => props.themeToggler()}
+          />
+        )}
         <HeaderCartButton onClick={props.onShowCart} />
-      </header>
-
-      <div className={styles["main-image"]}>
-        <img src={mealsImage} alt="" />
-      </div>
+      </Container>
     </Fragment>
   );
 };

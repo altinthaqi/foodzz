@@ -1,8 +1,12 @@
-import Header from "./components/Layout/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Order from "./pages/Order";
+import About from "./pages/About";
 import { useState } from "react";
-import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
+import Header from "./components/Layout/Header";
+import { lightTheme, darkTheme } from "./assets/theme/theme";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -15,14 +19,29 @@ function App() {
     setCartIsShown(false);
   };
 
+  const [theme, setTheme] = useState("dark");
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
   return (
-    <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Meals />
-      </main>
-    </CartProvider>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <CartProvider>
+        <BrowserRouter>
+          {cartIsShown && <Cart onClose={hideCartHandler} />}
+          <Header
+            onShowCart={showCartHandler}
+            themeToggler={themeToggler}
+            theme={theme}
+          />
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/order" element={<Order />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+    </ThemeProvider>
   );
 }
 
