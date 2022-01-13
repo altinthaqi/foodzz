@@ -10,6 +10,12 @@ import { ThemeProvider } from "styled-components";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const [theme, setTheme] = useState("dark");
+  const [currentPathLocation, setCurrentPathLocation] = useState("");
+
+  const changePathLocation = (query) => {
+    setCurrentPathLocation(query);
+  };
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -18,8 +24,6 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
-
-  const [theme, setTheme] = useState("dark");
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -34,10 +38,17 @@ function App() {
             onShowCart={showCartHandler}
             themeToggler={themeToggler}
             theme={theme}
+            onPathLocation={currentPathLocation}
           />
           <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/order" element={<Order />} />
+            <Route
+              path="/"
+              element={<About onPathChange={changePathLocation} />}
+            />
+            <Route
+              path="/order"
+              element={<Order onPathChange={changePathLocation} />}
+            />
           </Routes>
         </BrowserRouter>
       </CartProvider>

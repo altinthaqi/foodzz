@@ -20,6 +20,10 @@ export const Container = styled.header`
     font-family: "Sigmar One", cursive;
   }
 
+  a {
+    color: ${(props) => props.theme.text};
+  }
+
   .themeIcon {
     cursor: pointer;
   }

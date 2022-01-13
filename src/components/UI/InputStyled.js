@@ -5,14 +5,17 @@ export const InputContainer = styled.div`
   align-items: center;
   margin-bottom: 0.5rem;
   label {
-    font-weight: bold;
+    font-weight: 500;
     margin-right: 1rem;
+    color: ${(props) => props.theme.grayText};
   }
   input {
     width: 3rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
     font: inherit;
     padding-left: 0.5rem;
+    background-color: ${(props) => props.theme.inputCol};
+    color: white;
   }
 `;

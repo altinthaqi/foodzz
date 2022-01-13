@@ -4,7 +4,7 @@ export const CartItems = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 20rem;
+  max-height: 30rem;
   overflow: auto;
 `;
 
@@ -24,18 +24,19 @@ export const Actions = styled.div`
   button {
     font-weight: 500;
     cursor: pointer;
-    border: 1px solid ${(props) => props.theme.text};
+    color: ${(props) => props.theme.orderTitle};
+    border: 1px solid ${(props) => props.theme.orderTitle};
     padding: 0.5rem 2rem;
     border-radius: 25px;
     margin-left: 1rem;
-    background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.body};
   }
 
   button:hover,
   button:active {
-    background-color: ${(props) => props.theme.text};
-    color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.orderTitle};
+    color: white;
     border: 1px solid ${(props) => props.theme.body};
   }
 `;

@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   font-family: "Murecho", sans-serif;
+  text-decoration: none;
 }
 
 html {
@@ -10,4 +11,8 @@ html {
 
 body {
   margin: 0;
+}
+
+li {
+  list-style: none;
 }

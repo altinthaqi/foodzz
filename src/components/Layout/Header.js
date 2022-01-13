@@ -3,12 +3,15 @@ import HeaderCartButton from "../Layout/HeaderCartButton";
 import { Container } from "./HeaderStyled";
 import { MdLightMode } from "react-icons/md";
 import { BsFillMoonFill } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
   return (
     <Fragment>
       <Container>
-        <h3>foodZz</h3>
+        <NavLink to="/">
+          <h3>foodzz</h3>
+        </NavLink>
         {props.theme === "light" ? (
           <BsFillMoonFill
             className="themeIcon"
@@ -20,7 +23,15 @@ const Header = (props) => {
             onClick={() => props.themeToggler()}
           />
         )}
-        <HeaderCartButton onClick={props.onShowCart} />
+
+        {props.onPathLocation === "/" && (
+          <NavLink to="/order">
+            <h4>order</h4>
+          </NavLink>
+        )}
+        {props.onPathLocation === "/order" && (
+          <HeaderCartButton onClick={props.onShowCart} />
+        )}
       </Container>
     </Fragment>
   );

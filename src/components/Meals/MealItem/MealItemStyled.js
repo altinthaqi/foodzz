@@ -5,20 +5,24 @@ export const Meal = styled.li`
   justify-content: space-between;
   margin: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid ${(props) => props.theme.borderBottomCartItem};
+  color: ${(props) => props.theme.text};
 
   h3 {
     margin: 0 0 0.25rem 0;
+    color: ${(props) => props.theme.text};
+
+    font-family: "Sigmar One", cursive;
   }
 
   .description {
-    font-style: italic;
+    color: ${(props) => props.theme.grayText};
   }
 
   .price {
     margin-top: 0.25rem;
     font-weight: bold;
-    color: #ad5502;
-    font-size: 1.25rem;
+    color: ${(props) => props.theme.priceCol};
+    font-size: 1.2rem;
   }
 `;

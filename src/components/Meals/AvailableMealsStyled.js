@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const MealsContainer = styled.section`
   max-width: 60rem;
   width: 90%;
-  margin: 2rem auto;
+  margin: auto;
+  padding: 0rem 0rem 2rem 0rem;
   animation: meals-appear 1s ease-out forwards;
-
   ul {
     list-style: none;
     margin: 0;
