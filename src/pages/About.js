@@ -13,7 +13,7 @@ function About(props) {
   const path = window.location.pathname;
 
   useEffect(() => {
-    if (path === "/foodzz") {
+    if (path === "/") {
       window.scrollTo(0, 0);
       props.onPathChange("/");
     }

@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Murecho:wght@300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Murecho", sans-serif;
+  text-decoration: none;
+}
+
+html {
+  font-family: "Murecho", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}

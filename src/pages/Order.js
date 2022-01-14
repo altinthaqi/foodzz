@@ -5,7 +5,7 @@ import styled from "styled-components";
 function Order(props) {
   const path = window.location.pathname;
   useEffect(() => {
-    if (path === "/foodzz/order") {
+    if (path === "/order") {
       window.scrollTo(0, 0);
       props.onPathChange("/order");
     }

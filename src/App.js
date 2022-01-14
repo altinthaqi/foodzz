@@ -8,6 +8,8 @@ import Header from "./components/Layout/Header";
 import { lightTheme, darkTheme } from "./assets/theme/theme";
 import { ThemeProvider } from "styled-components";
 
+import "./App.css";
+
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -42,11 +44,11 @@ function App() {
           />
           <Routes>
             <Route
-              path="/foodzz"
+              path="/"
               element={<About onPathChange={changePathLocation} />}
             />
             <Route
-              path="foodzz/order"
+              path="/order"
               element={<Order onPathChange={changePathLocation} />}
             />
           </Routes>

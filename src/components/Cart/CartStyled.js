@@ -1,11 +1,19 @@
 import styled from "styled-components";
+import media from "../../assets/media/media";
 
 export const CartItems = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 30rem;
+  max-height: 20rem;
   overflow: auto;
+
+  ${media.desktop} {
+    max-height: 30rem;
+  }
+  ${media.tablet} {
+    max-height: 30rem;
+  }
 `;
 
 export const Total = styled.div`
