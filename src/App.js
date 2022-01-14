@@ -42,11 +42,11 @@ function App() {
           />
           <Routes>
             <Route
-              path="/"
+              path="/foodzz"
               element={<About onPathChange={changePathLocation} />}
             />
             <Route
-              path="/order"
+              path="foodzz/order"
               element={<Order onPathChange={changePathLocation} />}
             />
           </Routes>

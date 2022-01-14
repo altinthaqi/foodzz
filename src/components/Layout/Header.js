@@ -9,7 +9,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <Container>
-        <NavLink to="/">
+        <NavLink to="/foodzz">
           <h3>foodzz</h3>
         </NavLink>
         {props.theme === "light" ? (
@@ -25,7 +25,7 @@ const Header = (props) => {
         )}
 
         {props.onPathLocation === "/" && (
-          <NavLink to="/order">
+          <NavLink to="foodzz/order">
             <h4>order</h4>
           </NavLink>
         )}
