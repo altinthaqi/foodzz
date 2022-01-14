@@ -44,7 +44,7 @@ export const Container = styled.div`
     .text {
       h2 {
         max-width: 800px;
-        font-size: 31px;
+        font-size: 26px;
       }
     }
     .space {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MealsContainer = styled.section`
-  max-width: 60rem;
+  max-width: 900px;
   width: 90%;
   margin: auto;
   padding: 0rem 0rem 2rem 0rem;

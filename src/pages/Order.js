@@ -6,6 +6,7 @@ function Order(props) {
   const path = window.location.pathname;
   useEffect(() => {
     if (path === "/order") {
+      window.scrollTo(0, 0);
       props.onPathChange("/order");
     }
   }, [path]);

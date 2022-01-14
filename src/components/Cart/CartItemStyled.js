@@ -61,5 +61,6 @@ export const ItemContainer = styled.li`
   h2 {
     margin: 0 0 0.5rem 0;
     color: ${(props) => props.theme.text};
+    font-family: "Sigmar One", cursive;
   }
 `;

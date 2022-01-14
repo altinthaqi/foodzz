@@ -10,7 +10,7 @@ import { ThemeProvider } from "styled-components";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [currentPathLocation, setCurrentPathLocation] = useState("");
 
   const changePathLocation = (query) => {

@@ -2,13 +2,13 @@ import styled from "styled-components";
 import media from "../../assets/media/media";
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px 0px 50px 0px;
-  background-color: ${(props) => props.theme.body};
 
   .first {
     transition: 0.5s all;
@@ -94,6 +94,7 @@ export const Container = styled.div`
 
   .imageContainer {
     height: 300px;
+    width: 300px;
     width: 80%;
     max-width: 300px;
     margin: 20px;

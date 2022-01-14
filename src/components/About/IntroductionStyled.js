@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 40px 0px;
-  background-color: ${(props) => props.theme.body};
 
   h2 {
     font-weight: 500;

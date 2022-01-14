@@ -12,7 +12,8 @@ export const BannerTitle = styled.h1`
   color: white;
   text-align: center;
   font-size: 51px;
-  border: 2px solid #464670;
+  border-bottom: 2px solid #8181ad;
+  border-right: 2px solid #ababd1;
   border-radius: 15px;
   padding: 10px 18px;
 
