@@ -24,12 +24,11 @@ const Header = (props) => {
           />
         )}
 
-        {props.onPathLocation === "/" && (
+        {props.onPathLocation === "/" ? (
           <NavLink to="/order">
             <h4>order</h4>
           </NavLink>
-        )}
-        {props.onPathLocation === "/order" && (
+        ) : (
           <HeaderCartButton onClick={props.onShowCart} />
         )}
       </Container>

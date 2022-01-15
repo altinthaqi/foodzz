@@ -24,6 +24,13 @@ export const Meal = styled.li`
     padding: 5px 0px;
   }
 
+  .link {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 5px 0px;
+    color: ${(props) => props.theme.callToAct};
+  }
+
   .price {
     font-weight: bold;
     color: ${(props) => props.theme.priceCol};

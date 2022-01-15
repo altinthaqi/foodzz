@@ -9,6 +9,7 @@ import { lightTheme, darkTheme } from "./assets/theme/theme";
 import { ThemeProvider } from "styled-components";
 
 import "./App.css";
+import Product from "./components/Meals/Product";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -50,6 +51,10 @@ function App() {
             <Route
               path="/order"
               element={<Order onPathChange={changePathLocation} />}
+            />{" "}
+            <Route
+              path="/order/:id"
+              element={<Product onPathChange={changePathLocation} />}
             />
           </Routes>
         </BrowserRouter>

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import media from "../../../assets/media/media";
 
 export const Form = styled.form`
-  @import url("https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap");
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -19,7 +18,7 @@ export const Form = styled.form`
     padding: 0.35rem 1rem;
     border-radius: 8px;
     font-weight: 600;
-    font-family: "Sigmar One", cursive;
+
     transition: all 0.5s;
 
     &:hover,

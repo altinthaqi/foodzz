@@ -3,6 +3,7 @@ import MealItemForm from "./MealItemForm";
 import { useContext } from "react";
 import CartContext from "../../../store/cart-context";
 import { Meal } from "./MealItemStyled";
+import { NavLink } from "react-router-dom";
 
 function MealItem(props) {
   const cartCtx = useContext(CartContext);
@@ -23,6 +24,9 @@ function MealItem(props) {
         <h3>{props.name}</h3>
         <div className="description">{props.description}</div>
         <div className="price">{price}</div>
+        <NavLink to={`/order/${props.id}`} className="link">
+          View recipe...
+        </NavLink>
       </div>
       <div>
         <MealItemForm id={props.id} onAddToCart={addToCartHandler} />
