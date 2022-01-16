@@ -24,7 +24,7 @@ function MealItem(props) {
         <h3>{props.name}</h3>
         <div className="description">{props.description}</div>
         <div className="price">{price}</div>
-        <NavLink to={`/order/${props.id}`} className="link">
+        <NavLink to={`/recipes/${props.id}`} className="link">
           View recipe...
         </NavLink>
       </div>

@@ -10,15 +10,11 @@ import { ThemeProvider } from "styled-components";
 
 import "./App.css";
 import Product from "./components/Meals/Product";
+import Recipes from "./components/Meals/Recipes";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [theme, setTheme] = useState("light");
-  const [currentPathLocation, setCurrentPathLocation] = useState("");
-
-  const changePathLocation = (query) => {
-    setCurrentPathLocation(query);
-  };
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -41,21 +37,13 @@ function App() {
             onShowCart={showCartHandler}
             themeToggler={themeToggler}
             theme={theme}
-            onPathLocation={currentPathLocation}
           />
           <Routes>
-            <Route
-              path="/"
-              element={<About onPathChange={changePathLocation} />}
-            />
-            <Route
-              path="/order"
-              element={<Order onPathChange={changePathLocation} />}
-            />{" "}
-            <Route
-              path="/order/:id"
-              element={<Product onPathChange={changePathLocation} />}
-            />
+            <Route path="/" element={<About />} />
+            recipes
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/:id" element={<Product />} />
+            <Route path="/order" element={<Order />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

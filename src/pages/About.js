@@ -9,14 +9,11 @@ import Boxes from "../components/About/Boxes";
 import CallToAct from "../components/About/CallToAct";
 import Footer from "../components/About/Footer";
 
-function About(props) {
+function About() {
   const path = window.location.pathname;
 
   useEffect(() => {
-    if (path === "/") {
-      window.scrollTo(0, 0);
-      props.onPathChange("/");
-    }
+    window.scrollTo(0, 0);
   }, [path]);
 
   return (

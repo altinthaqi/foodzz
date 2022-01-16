@@ -1,28 +1,63 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const Nav = styled.nav`
+  h3 {
+    color: ${(props) => props.theme.text};
+  }
   position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 5rem;
-  background-color: ${(props) => props.theme.body};
-  color: ${(props) => props.theme.text};
+  z-index: 999;
+  padding: 0.4rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  flex-wrap: wrap;
+  background-color: ${(props) => props.theme.body};
   box-shadow: 0 3px 5px rgba(36, 36, 36, 0.1);
-  z-index: 10;
-
-  h3 {
-  }
-
-  a {
-    color: ${(props) => props.theme.text};
-  }
 
   .themeIcon {
+    font-size: 18px;
+    margin: 0px 20px;
+    color: ${(props) => props.theme.text};
     cursor: pointer;
   }
+`;
+
+export const Hamburger = styled.div`
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  span {
+    height: 2px;
+    width: 25px;
+    background-color: ${(props) => props.theme.text};
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const Menu = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @media (max-width: 768px) {
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    transition: max-height 0.3s ease-in;
+  }
+`;
+export const MenuLink = styled.p`
+  padding: 0.3rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: ${(props) => props.theme.text};
+  font-weight: 600;
+  font-size: 0.9rem;
 `;

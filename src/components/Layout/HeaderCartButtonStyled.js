@@ -6,9 +6,9 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.thirdCol};
   color: white;
   padding: 0.3rem 1rem;
-  height: 45px;
+  height: 35px;
 
-  width: 140px;
+  width: 75px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

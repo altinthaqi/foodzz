@@ -26,9 +26,7 @@ function HeaderCartButton(props) {
 
   return (
     <Button onClick={props.onClick} btnHighlight={btnHighlight}>
-      <RiShoppingCartLine className="cartIcon" />
-
-      <p>Your Cart</p>
+      <p>Cart</p>
       <p id="number">{numberOfCartItems}</p>
     </Button>
   );
