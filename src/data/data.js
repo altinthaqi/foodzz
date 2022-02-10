@@ -1,20 +1,3 @@
-// prepareTime: "",
-//     ingredients: [
-//       ",",
-//       ",",
-//       ",",
-//       ".",
-//     ],
-//     instructions: [
-//       "",
-//       "",
-//       "",
-//       "",
-//       "",
-//       "",
-//       "",
-//     ],
-
 export const DUMMY_MEALS = [
   {
     id: "m0",
