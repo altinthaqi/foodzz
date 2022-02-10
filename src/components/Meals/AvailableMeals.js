@@ -5,6 +5,7 @@ import MealItem from "./MealItem/MealItem";
 
 function AvailableMeals() {
   const [meals, setMeals] = useState([]);
+
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(

@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import { Actions, CartItems, Total } from "./CartStyled";
+import Checkout from "./Checkout";
 
 function Cart(props) {
+  const [isCheckout, setIsCheckout] = useState(false);
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -17,6 +19,17 @@ function Cart(props) {
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
   };
+
+  const orderHandler = () => {
+    setIsCheckout(true);
+  };
+
+  const modalActions = (
+    <Actions>
+      <button onClick={props.onClose}>Close</button>
+      {hasItems && <button onClick={orderHandler}>Order</button>}
+    </Actions>
+  );
 
   const cartItems = (
     <CartItems>
@@ -39,10 +52,9 @@ function Cart(props) {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </Total>
-      <Actions>
-        <button onClick={props.onClose}>Close</button>
-        {hasItems && <button>Order</button>}
-      </Actions>
+
+      {isCheckout && <Checkout onCancel={props.onClose} />}
+      {!isCheckout && modalActions}
     </Modal>
   );
 }
