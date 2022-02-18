@@ -4,6 +4,7 @@ import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import { Actions, CartItems, Total } from "./CartStyled";
 import Checkout from "./Checkout";
+import styled from "styled-components";
 
 function Cart(props) {
   const [isCheckout, setIsCheckout] = useState(false);
@@ -80,14 +81,16 @@ function Cart(props) {
 
   const didSubmitModalContent = (
     <>
-      <p>Sucesfully sent the order!</p>
+      <ActionHandleText>Sucesfully sent the order!</ActionHandleText>
       <Actions>
         <button onClick={props.onClose}>Close</button>
       </Actions>
     </>
   );
 
-  const isSubmittingModalContent = <p>Sending order data...</p>;
+  const isSubmittingModalContent = (
+    <ActionHandleText>Sending order data...</ActionHandleText>
+  );
   return (
     <Modal onClose={props.onClose}>
       {!isSubmitting && !didSubmit && cartModalContent}
@@ -96,5 +99,10 @@ function Cart(props) {
     </Modal>
   );
 }
+
+export const ActionHandleText = styled.p`
+  color: ${(props) => props.theme.orderTitle};
+  font-weight: bold;
+`;
 
 export default Cart;

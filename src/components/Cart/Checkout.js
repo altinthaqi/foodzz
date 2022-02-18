@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useRef, useState } from "react";
 import classes from "./Checkout.module.css";
+import { Actions } from "./CartStyled";
+
 const isEmpty = (value) => value.trim() === "";
 const isFiveChars = (value) => value.trim().length === 5;
 
@@ -68,24 +70,26 @@ const Checkout = (props) => {
       <Control className={nameControlClass}>
         <label htmlFor="name">Your Name</label>
         <input type="text" id="name" ref={nameInputRef} />
-        {!formInputsValidity.name && <p>Enter a valid name</p>}
+        {!formInputsValidity.name && <ErrorText>Enter a valid name</ErrorText>}
       </Control>
       <Control className={streetControlClass}>
         <label htmlFor="street">Street</label>
         <input type="text" id="street" ref={streetInputRef} />
-        {!formInputsValidity.street && <p>Enter a valid street</p>}
+        {!formInputsValidity.street && (
+          <ErrorText>Enter a valid street</ErrorText>
+        )}
       </Control>
       <Control className={postalCodeControlClass}>
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalCodeInputRef} />
         {!formInputsValidity.postalCode && (
-          <p>Enter a valid Postal Code (5char)</p>
+          <ErrorText>Enter a valid Postal Code (5 char +)</ErrorText>
         )}
       </Control>
       <Control className={cityControlClass}>
         <label htmlFor="city">City</label>
         <input type="text" id="city" ref={cityInputRef} />
-        {!formInputsValidity.city && <p>Enter a valid city</p>}
+        {!formInputsValidity.city && <ErrorText>Enter a valid city</ErrorText>}
       </Control>
       <Actions>
         <button type="button" onClick={props.onCancel}>
@@ -97,18 +101,25 @@ const Checkout = (props) => {
   );
 };
 
+export const ErrorText = styled.p`
+  color: ${(props) => props.theme.grayText};
+`;
+
 export const Control = styled.div`
   label {
-    font-weight: bold;
+    font-weight: medium;
     display: block;
+    color: ${(props) => props.theme.text};
   }
 
   input {
     font: inherit;
-    border: 1px solid #ccc;
+    border: 1px solid ${(props) => props.theme.orderTitle};
     border-radius: 4px;
     width: 20rem;
     max-width: 100%;
+    background-color: ${(props) => props.theme.body};
+    color: ${(props) => props.theme.text};
   }
 `;
 
@@ -116,38 +127,6 @@ export const Form = styled.form`
   margin: 0rem 0;
   height: 12rem;
   overflow: auto;
-`;
-
-export const Actions = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-
-  button {
-    font: inherit;
-    color: #5a1a01;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    border-radius: 25px;
-    padding: 0.5rem 2rem;
-  }
-
-  button:hover,
-  button:active {
-    background-color: #ffe6dc;
-  }
-
-  .submit {
-    border: 1px solid #5a1a01;
-    background-color: #5a1a01;
-    color: white;
-  }
-
-  .submit:hover,
-  .submit:active {
-    background-color: #7a2706;
-  }
 `;
 
 export default Checkout;

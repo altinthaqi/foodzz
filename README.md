@@ -1,7 +1,7 @@
 <h1 align="center">Movie Mood</h1>
 
 <p align="center">foodzz is a ReactJS Web Application built for restaurants</p>
-<p align="center">It serves as a web-app that showcases information about a particular restaurant. With plenty of features, you can Order Food with a sub-total price, View Recipes etc... Find the food you'd like to order, click on the ADD to add it to the Cart. Your cart holds the data (with Context API) of products you've added to your cart, together with the subtotal price of all items. You can also View Recipe for each food with Nested Routes v6.</p>
+<p align="center">Restaurant web application used for online food ordering. With plenty of features, you can Order Food implemented with Context API and useReducer, Fetch Recipes from a databse and store your orders in the backend, View Recipes etc... Find the food you'd like to order, click on the ADD to add it to the Cart, where you can later checkout on a fully validated form, to store that data in a database. You can also View Recipe for each food with Nested Routes v6.</p>
 
 ## Links
 
@@ -19,7 +19,6 @@ Run this command on your terminal: `npm install` ,
 <br/><br/>
 Start the project: `npm start` .
 
-
 ## Paths:
 
 - /
@@ -29,12 +28,15 @@ Start the project: `npm start` .
 
 ## Features:
 
+- Fetched recipes from a real-time database
+- Food Cart implemented with Context API + useReducer
+- Store ordered food orders in a database
+- View recipes in Nested Routes with react-router-dom v6
 - Mobile-First fully responsive 3 BP (Mobile, Tablet, Desktop)
 - Light/Dark mode implemented throughtout all pages
-- Order food with Context API + useReducer
-- View recipes in Nested Routes with react-router-dom v6
 
 ## Built With:
 
 - ReactJS
 - Styled Components
+- Firebase
